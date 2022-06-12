@@ -1,6 +1,7 @@
 # Program Code2
 
 Autor: Ewelina Sałata
+
 Licencja: GPL 3.0
 
 -------------------------------------------------------------------------------------
@@ -30,6 +31,10 @@ To polecenie spowoduje powstanie dodatkowych plików:
 	objetosc.so # Biblioteka współdzielona z funkcją do liczenia objętości sześcianu
 	Code2.o     # plik obiektowy, stworzony przez kompilator języka C
 
+Uruchomienie programu Code2:
+	
+	./Code2
+	
 -------------------------------------------------------------------------------------
 
 Aby usunąć pliki powstałe podczas kompilacji, należy użyć polecenia:
@@ -58,3 +63,23 @@ Historia rozwoju Code2:
 5. commit: wykorzystanie reguł wzorca w Makefile
 
 6. commit: Uzupełnienie pliku README.md
+
+---------------------------------------------------------------------------------------
+
+Wynik polecenia make clean:
+
+	> make Code2
+	gcc -c Code2.c
+	gcc -c pole.c
+	ar rcs pole.a pole.o
+	gcc -fPIC -c objetosc.c
+	gcc -shared -o objetosc.so objetosc.o
+	gcc -o Code2 Code2.o pole.a ./objetosc.so
+	
+Output Code2 dla ustalonej (= 5) wartości długość boku kwadratu /krawędzi sześcianu:
+
+	Pole kwadratu o boku     5.00 wynosi:    25.00
+	Objetosc szescianu o krawedzi     5.00 wynosi:   125.00
+	
+
+		
