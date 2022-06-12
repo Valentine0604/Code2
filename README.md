@@ -1,8 +1,9 @@
-# Code2
-Zadanie 2
-
 # Program Code2
-# Autor: Ewelina Sałata
+
+Autor: Ewelina Sałata
+Licencja: GPL 3.0
+
+-------------------------------------------------------------------------------------
 
 Funkcjonalności programu Code 2:
  - możliwość policzenia pola kwadratu (przy wykorzystaniu biblioteki statycznej)
