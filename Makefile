@@ -20,11 +20,11 @@ Code2: Code2.o pole.a objetosc.so
 .c.o: 
 	$(CC) $(C_FLAG) $<
 
-pole.a: pole.o
+p%.a: p%.o
 	$(AR) $@ $<
 
-objetosc.so: objetosc.o
+o%.so: o%.o
 	$(CC) $(SHARED_FLAGS) $@ $<
 
 clean:
-	$(RM) $(PROGS) *.o *.a *.out *~ *.so *.gch
+	$(RM) $(PROGS) *.o *.a *~ *.so
