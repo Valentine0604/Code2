@@ -7,19 +7,18 @@ MULTI_FLAGS = -fPIC -c
 O_FLAG = -o
 C_FLAG = -c
 
+.PHONY: clean
+.SUFFIXES: .c .o .a .so	
+
 PROGS = Code2 pole objetosc
+
+all: $(PROGS)
 
 Code2: Code2.o pole.a objetosc.so
 	$(CC) $(O_FLAG) $@ $< pole.a ./objetosc.so
 
-Code2.o: Code2.c
+.c.o: 
 	$(CC) $(C_FLAG) $<
-
-pole.o: pole.c
-	$(CC) $(C_FLAG) $<
-
-objetosc.o: objetosc.c
-	$(CC) $(MULTI_FLAGS) $^
 
 pole.a: pole.o
 	$(AR) $@ $<
